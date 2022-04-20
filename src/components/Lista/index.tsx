@@ -1,5 +1,6 @@
 import React from "react";
-import { ListaWrapper } from "./Lista";
+import { ListaWrapper } from "../../styles/Lista";
+import Item from "./item";
 
 export default function lista(){
     const tarefas = [{
@@ -28,18 +29,16 @@ export default function lista(){
         tempo: '03:00:00'
     }]
     return(
-        <ListaWrapper>
+        <ListaWrapper> {/* SRP - Nesse componente, a lista só tem uma função */}
             <h2> Estudos do dia </h2>
-            <ul>
-                {tarefas.map((item, index) => (
-                    <li className="item" key={index}>
-                        <h3>{item.tarefa}</h3>
-                        <span>{item.tempo}</span>
-                    </li>
+            <ul> 
+                {tarefas.map((item, index) => ( /* RESPONSABILIDADE LISTA = Fazer a iteração e enviar os dados via map e props */ /* INDEX = Não entendi. */
+                    <Item tarefa={item.tarefa} tempo={item.tempo} key={index}/> /* RESPONSABILIDADE ITEM = Renderizar os dados enviados por lista  */
                 ))}
-                {/* {tarefas.map(item => <p> {item.tarefa} </p>)} */} {/* Exemplo zuado do exercício */}
             </ul>
         </ListaWrapper>
     )
 }
 
+
+{/* {tarefas.map(item => <p> {item.tarefa} </p>)} */} {/* Exemplo zuado do exercício */}

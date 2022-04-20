@@ -11,11 +11,12 @@ export const AppStyle = styled.div`
   row-gap: 24px;
   min-width: 320px;
   min-height: calc(100vh - 32px);
-  width: 100%;
+  width: 90%;
   padding: 32px;
   box-sizing: border-box;
   border-radius: 10px;
   background-color: #171717;
+  margin: 0 auto;
 
   @media screen and (min-width:1280px)  {
     grid-template-areas: 
@@ -28,5 +29,9 @@ export const AppStyle = styled.div`
     justify-content: center;
     align-content: center;
     padding: 64px;
+  }
+
+  @media screen and (min-width:1440px)  {
+    width: 80%;
   }
 ` 

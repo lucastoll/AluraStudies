@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const ListaWrapper = styled.aside`
   grid-area: tarefas;
   height: 100%;
+  margin-bottom: 100px;
 
   h2 {
     font-size: 1.25rem;
