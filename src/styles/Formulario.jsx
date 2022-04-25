@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FormularioWrapper = styled.div`
+export const FormularioWrapper = styled.form`
     display:flex;
     flex-direction: column;
     grid-area: nova-tarefa;
