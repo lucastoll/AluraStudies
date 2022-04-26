@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/alura-studies/static/css/main.e6c13ad2.css",
+    "main.js": "/alura-studies/static/js/main.e4296946.js",
+    "index.html": "/alura-studies/index.html",
+    "main.e6c13ad2.css.map": "/alura-studies/static/css/main.e6c13ad2.css.map",
+    "main.e4296946.js.map": "/alura-studies/static/js/main.e4296946.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.e4296946.js"
+  ]
+}
