@@ -2,18 +2,23 @@ import styled from "styled-components"
 
 export const Botao = styled.button`
   align-self: center;
-  background-color: #88bcd1;
+  background-color: #5080fb2d;
   border-radius: 10px;
   box-shadow: 2px 4px 4px #0000009F;
-  color: #272626;
+  color: #ffffff;
   cursor: pointer;
   font-size: 1.25rem;
   padding: 16px;
   width: 150px;
+  transition: background-color 0.3s ease-in-out;
   
-  &:active {
-    background-color: #7CA6B7;
-    box-shadow: 2px 2px 4px #0000009F inset;
+  &:hover {
+    background-color: #5081FB3D;
+    cursor: pointer;
+  }
+
+  &:active{
+    background-color: #3f75fd8a
   }
 
 

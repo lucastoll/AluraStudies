@@ -17,7 +17,7 @@ export default function Item({tarefa, tempo, selecionado, completado, id, seleci
     )}>
         <h3>{tarefa}</h3>
         <span>{tempo}</span>
-        {completado && <span className="concluido" aria-label="tarefa completada"></span>} {/* Se completado = true -> renderizar span */}
+        {completado && <img src="img/check-mark.png" className="concluido" aria-label="tarefa completada"></img>} {/* Se completado = true -> renderizar span */}
     </li>
     )
 }

@@ -40,8 +40,8 @@ export function Cronometro({ selecionado, finalizarTarefa } : Props ) {
             <p className='titulo'>Escolha um card e inicie o cronômetro</p>
             <div className='relogioWrapper'>
                 <Relogio tempo={tempo}/>
+                <Botao onClick={() => regressiva(tempo)}>Começar!</Botao>
             </div>
-            <Botao onClick={() => regressiva(tempo)}>Começar!</Botao>
         </CronometroWrapper>
     )
 }

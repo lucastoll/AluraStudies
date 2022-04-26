@@ -8,12 +8,14 @@ export const CronometroWrapper = styled.div`
 
   .relogioWrapper {
     align-items: center;
-    background-color: #7687A1;
+    background-color: #051D3B;
     border-radius: 10px;
     box-shadow: 2px 4px 4px #0000009F;
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     font-size: 2rem;
+    gap: 20px;
     justify-content: center;
     margin-bottom: 24px;
     padding: 8px 12px;
@@ -24,27 +26,11 @@ export const CronometroWrapper = styled.div`
     font-size: 1.25rem;
   }
 
-  button {
-    background-color: #88bcd1;
-    border-radius: 10px;
-    box-shadow: 2px 4px 4px #0000009F;
-    color: #272626;
-    cursor: pointer;
-    font-size: 1.25rem;
-    padding: 16px;
-    width: 150px;
-    
-    &:active {
-      background-color: #7CA6B7;
-      box-shadow: 2px 2px 4px #0000009F inset;
-      cursor: auto;
-    }
-  }
 
   @media screen and (min-width:1280px) {
     
     .relogioWrapper{
-      font-size: 15rem;
+      font-size: 10rem;
     }
 
     p {

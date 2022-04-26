@@ -11,7 +11,7 @@ export const AppStyle = styled.div`
   row-gap: 24px;
   min-width: 320px;
   min-height: calc(100vh - 32px);
-  width: 90%;
+  width: 100%;
   padding: 32px;
   box-sizing: border-box;
   border-radius: 10px;

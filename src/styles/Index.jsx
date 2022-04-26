@@ -68,7 +68,7 @@ body {
 	justify-content: center;
 	font-family: 'Manjari', sans-serif;
 	color: #F0F0F0;
-	background-color: #4C4C4C;
+	background-color: #051D3B;
 	height: 100%;
 	width: 100%;
 	padding: 16px;

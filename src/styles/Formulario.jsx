@@ -4,7 +4,7 @@ export const FormularioWrapper = styled.form`
     display:flex;
     flex-direction: column;
     grid-area: nova-tarefa;
-    background-color: #7687A1;
+    background-color: #051D3B;
     border-radius: 10px;
     box-shadow: 2px 4px 4px #0000009F;
     padding: 12px;
@@ -26,11 +26,20 @@ export const FormularioWrapper = styled.form`
     box-sizing: border-box;
     border: unset;
     border-radius: 5px;
-    background-color: #5D677C;
+    background-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0px 2px 4px #2D2B2B9F inset;
+    transition: background 0.3s ease-in-out; 
     
     &::placeholder {
         color: #BFBFBF;
+    }
+
+    &:hover{
+        background: #41536A;
+    }
+
+    &:focus{
+        background: #41536A;
     }
     }
 }

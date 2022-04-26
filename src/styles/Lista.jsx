@@ -38,6 +38,11 @@ export const ListaWrapper = styled.aside`
   margin-bottom: 8px;
   position: relative;
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out; 
+
+  &:hover{
+    background-color: #292929;
+  }
 
   h3 {
     margin-bottom: 8px;
@@ -55,12 +60,17 @@ export const ListaWrapper = styled.aside`
 
 .itemSelecionado {
   background-color: #292929;
-  box-shadow: 2px 4px 4px #0000009F inset;
+  
 }
 
 .itemCompletado {
-  background-color: #566F42;
+  background-color: #051D3B;
   cursor: auto;
+
+  &:hover{
+    background-color: #051D3B;
+  }
+
 
 .concluido {
   display: block;
@@ -73,6 +83,7 @@ export const ListaWrapper = styled.aside`
   transform: translateY(-50%);
   width: 42px;
   height: 43px;
+  
 }
 }
 `
