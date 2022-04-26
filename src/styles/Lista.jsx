@@ -64,9 +64,9 @@ export const ListaWrapper = styled.aside`
 
 .concluido {
   display: block;
-  background-image: url('../../assets/img/check-mark.svg');
   background-repeat: no-repeat;
   background-size: 38px 38px;
+  background-image: url('check-mark.svg');
   position: absolute;
   top: 50%;
   right: 12px;

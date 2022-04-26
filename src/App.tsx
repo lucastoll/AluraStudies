@@ -8,26 +8,54 @@ import { InterfaceTarefa } from './types/interfaceTarefa';
 import { v4 as uuidv4} from 'uuid'
 
 
-
-
 export default function App() {
   const [tarefas, setTarefas] = useState<InterfaceTarefa[]>([
     {
-      tarefa: "Adicione uma tarefa e clique no cronomêtro para começar seu timer",
+      tarefa: "Tarefa teste",
       tempo: "00:00:05",
       selecionado: false,
       completado: false,
       id: uuidv4()
     }
   ])
-  /* Use state tipado, pois a array de objetos com tarefas agora foi passada vazia, 
-  então ele foi tipado para aceitar array do tipo InterfaceTarefa e array vazia */
+
+  const [selecionado, setSelecionado] = useState<InterfaceTarefa>(); /* state tipado */
+  function selecionaTarefa(tarefaSelecionada: InterfaceTarefa){ /* function tipada */
+    setSelecionado(tarefaSelecionada); 
+
+    setTarefas(tarefasAnteriores => tarefasAnteriores.map(tarefa => ({
+      ...tarefa,
+      selecionado: tarefa.id === tarefaSelecionada.id ? true : false
+      /* Faz um loop nas tarefas, caso o seu id seja igual o tarefaSelecionada a prop selecionado daquela tarefa passa para true */
+    })))
+  }
+
+  function finalizarTarefa(){
+    if(selecionado) {
+      setSelecionado(undefined);
+      setTarefas(tarefasAnteriores => 
+        tarefasAnteriores.map(tarefa => {
+          if(tarefa.id === selecionado.id){
+            return {
+              ...tarefa, 
+              selecionado: false,
+              completado: true
+            }
+          }
+          return tarefa;
+        }))
+    }
+  }
+
   return (
     <AppStyle>
       <ResetCss />
       <Formulario setTarefas={setTarefas} /> {/* Class component */}
-      <Lista tarefas={tarefas}/>
-      <Cronometro />
+      <Lista 
+      tarefas={tarefas}
+      selecionaTarefa={selecionaTarefa}
+      />
+      <Cronometro finalizarTarefa={finalizarTarefa} selecionado={selecionado}/>
     </AppStyle>
   );
 }
