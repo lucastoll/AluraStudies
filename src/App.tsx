@@ -50,11 +50,8 @@ export default function App() {
   return (
     <AppStyle>
       <ResetCss />
-      <Formulario setTarefas={setTarefas} /> {/* Class component */}
-      <Lista 
-      tarefas={tarefas}
-      selecionaTarefa={selecionaTarefa}
-      />
+      <Formulario setTarefas={setTarefas} /> 
+      <Lista tarefas={tarefas} selecionaTarefa={selecionaTarefa}/>
       <Cronometro finalizarTarefa={finalizarTarefa} selecionado={selecionado}/>
     </AppStyle>
   );
