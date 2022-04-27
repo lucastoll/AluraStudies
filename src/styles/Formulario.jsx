@@ -4,7 +4,7 @@ export const FormularioWrapper = styled.form`
     display:flex;
     flex-direction: column;
     grid-area: nova-tarefa;
-    background-color: #051D3B;
+    background-color: #0d294a;
     border-radius: 10px;
     box-shadow: 2px 4px 4px #0000009F;
     padding: 12px;

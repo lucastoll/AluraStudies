@@ -41,7 +41,7 @@ export const ListaWrapper = styled.aside`
   transition: background-color 0.3s ease-in-out; 
 
   &:hover{
-    background-color: #292929;
+    background-color: #363636;
   }
 
   h3 {
@@ -59,24 +59,21 @@ export const ListaWrapper = styled.aside`
 }
 
 .itemSelecionado {
-  background-color: #292929;
+  background-color: #363636;
   
 }
 
 .itemCompletado {
-  background-color: #051D3B;
+  background-color: #0d294a;
   cursor: auto;
 
   &:hover{
-    background-color: #051D3B;
+    background-color: #3f75fd8a;
   }
 
 
 .concluido {
   display: block;
-  background-repeat: no-repeat;
-  background-size: 38px 38px;
-  background-image: url('check-mark.svg');
   position: absolute;
   top: 50%;
   right: 12px;

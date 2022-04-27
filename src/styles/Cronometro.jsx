@@ -8,7 +8,7 @@ export const CronometroWrapper = styled.div`
 
   .relogioWrapper {
     align-items: center;
-    background-color: #051D3B;
+    background-color: #0d294a;
     border-radius: 10px;
     box-shadow: 2px 4px 4px #0000009F;
     box-sizing: border-box;
@@ -18,7 +18,7 @@ export const CronometroWrapper = styled.div`
     gap: 20px;
     justify-content: center;
     margin-bottom: 24px;
-    padding: 8px 12px;
+    padding: 24px;
     width: 100%;
   }
 
