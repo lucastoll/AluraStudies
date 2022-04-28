@@ -21,6 +21,8 @@ Essa seção do readme foi feita com objetivo de documentar a arquitetura e o fu
 
 ## States
 
+Nesse projeto, os states estão localizados no App e são passados como props para os componentes filhos.
+
 <ul>
   <h2> Tarefas </h2>
   <ul>
@@ -28,6 +30,11 @@ Essa seção do readme foi feita com objetivo de documentar a arquitetura e o fu
     <img src="https://user-images.githubusercontent.com/86172649/165802947-3fa79516-9f99-4a2c-9427-1b84406644e4.png">
     O state é tipado com colchetes <InterfaceTarefa[]>, pois ele deve armazenar varios objetos do tipo da interface, fazendo uma array:
     <img src="https://user-images.githubusercontent.com/86172649/165806645-a2fb07cc-3b6a-497e-ae54-c2bed3d088e6.png">
+  </ul>
+    
+  <h2> Selecionado </h2>
+  <ul>
+    State que serve para fazer a alteração da propriedade selecionada, contida nas tarefas do state tarefas, esse state é abordado nos componentes lista e cronômetro.
   </ul>
 </ul>
 
@@ -75,6 +82,35 @@ Essa seção do readme foi feita com objetivo de documentar a arquitetura e o fu
        <li>npm i uuid</li>
        <li>import { v4 as uuidv4} from 'uuid'</li>
      </ul>
+  </ul>
+     
+  <h2> Lista </h2>
+  <ul>
+  <img src="https://user-images.githubusercontent.com/86172649/165820562-2bb0ea42-d5ee-439a-a96d-987dd8f5b568.png"><br>
+    Esse componente tem como função fazer uma iteração com o .map sobre os dados de tarefas, do state tarefas, para então enviar os dados para o componente filho, nomeado Item, dessa maneira cada item é renderizado com um objeto da array de objetos de tarefas.
+    <br><br>
+    A lista recebe dois props, sendo eles a tarefa do state tarefas e a função seleciona tarefas, que apenas é repassada ao componente item, dessa maneira o componente foi tipado com uma interface props da seguinte maneira:<br>
+    <img src="https://user-images.githubusercontent.com/86172649/165821856-5683829c-d93c-4330-adcc-1ad0d27ae145.png"><br>
+    O componente é composto por um styled.div e o map a partir de tarefas, fazendo um componente item a cada iteração:
+    <img src="https://user-images.githubusercontent.com/86172649/165823077-3e3cc030-b2f8-47e6-abbd-c00277721924.png"><br>
+    
+  <h2> Item </h2>
+  <ul>
+    Esse componente tem como função renderizar os dados enviados pela iteração de lista, aplicando o fundamento do react <b><i>SRP - Single Responsability Principle</b></i>, pois dessa maneira lista tem uma responsabilidade e item tem outra, esse componente recebe como props uma função que percorreu o seguinte caminho App -> Lista -> Item, além disso ele recebe toda a interfaceTarefa, pois ele manipula suas propriedades, então o componente foi tipado da seguinte maneira:
+    <img src="https://user-images.githubusercontent.com/86172649/165826063-7681136b-3aed-4e5c-bd51-fe9354fca219.png"><br><br>
+    A função executada nesse componente é a selecionaTarefa, ela possui o setSelecionado do state selecionado, e o setTarefas, basicamente ela é executada no onClick de cada componente item,  essa função seta o selecionado do STATE SELECIONADO para true, então, é feito um map com o setTarefas percorrendo todas as tarefas, caso o id da tarefa seja igual ao id da tarefa selecionada, o selecionado do STATE TAREFA é setado para true, dessa maneira só pode ter um componente com selecionado = true.<br>
+    <img src="https://user-images.githubusercontent.com/86172649/165829884-5204975c-6c5c-4105-8e77-0bd5a8fb45d6.png"><br><br>
+    A logica do componente em si é simples, ele retorna a estrutura do item com os dados recebidos, e possui ifs ternarios aplicando as seguintes logicas, no className, caso a propriedade selecionado daquele item (que vem de tarefas) seja true, ele adiciona a classe itemSelecionado, o mesmo processo acontece para a propriedade completado. Alem disso, ele conta com a função onClick já citada anteriormente, que só é executada caso completado seja == false, por fim, ele renderiza uma imagem no item caso completado seja == true, utilizando a seguinte lógica:
+    <img src="https://user-images.githubusercontent.com/86172649/165830738-1f69acc5-808a-4f2a-938f-ca188001f669.png"><br><br>
+
+          
+  </ul>
+  
+  </ul>
+  
+
+     
+     
   </ul>
 </ul>
 
