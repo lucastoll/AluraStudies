@@ -28,7 +28,7 @@ Nesse projeto, os states estão localizados no App e são passados como props pa
   <ul>
     É o state principal da aplicação, sendo um state que armazena objetos contendo todas as propriedades das tarefas que são criadas e executadas no projeto, esse state é tipado como InterfaceTarefa[ ], classificado como uma interface, que é uma feature do typescript que guarda os tipos das propriedades de um objeto (nesse caso), ele fica em uma pasta separada localizada na src, nomeada types:
     <img src="https://user-images.githubusercontent.com/86172649/165802947-3fa79516-9f99-4a2c-9427-1b84406644e4.png">
-    O state é tipado com colchetes <InterfaceTarefa[]>, pois ele deve armazenar varios objetos do tipo da interface, fazendo uma array:
+    O state é tipado com colchetes <InterfaceTarefa[]>, pois ele deve armazenar varios objetos do tipo da interface, fazendo uma array:<br>
     <img src="https://user-images.githubusercontent.com/86172649/165806645-a2fb07cc-3b6a-497e-ae54-c2bed3d088e6.png">
   </ul>
     
@@ -71,7 +71,7 @@ Nesse projeto, os states estão localizados no App e são passados como props pa
      Os dois inputs encontrados nesse componente servem para captar o valor de duas propriedades das novas tarefas, sendo elas o nome (tarefa) e o tempo necessário para fazer aquela tarefa, dessa maneira, são feitos 2 states para mudar essas propriedades, pois um input sem state no react não é funcional, o valor padrão desses states é passado ao input com a propriedade value, e a função de set desses states é passada na propriedade onChange desses inputs com ajuda dos events:
      <img src="https://user-images.githubusercontent.com/86172649/165813373-26b8d15d-22d6-462f-84ed-c2ed876aad57.png">
      <br><br>
-     Com isso, o valor desses inputs é passado a função de submit do formulário, que executa o setTarefas, state principal encontrado no App, basicamente a função de submit pega todos os valores antigos do state utilizando um <b><i>spread operator</i></b>, lembrando que os valores antigos são uma propriedade padrão dos states, dessa maneira, eles adotam qualquer nome que você colocar, o spread operator é feito da seguinte forma:<br>
+     Com isso, o valor desses inputs é passado a função de submit do formulário, que executa o setTarefas, state principal encontrado no App, basicamente a função de submit pega todos os valores antigos do state utilizando um <b><i>spread operator</i></b> e seta tarefas novas usando os dois states locais que mudam com os valores inseridos nos inputs, lembrando que os valores antigos são uma propriedade padrão dos states, dessa maneira, eles adotam qualquer nome que você colocar, o spread operator é feito da seguinte forma:<br>
      <img src="https://user-images.githubusercontent.com/86172649/165814907-26fc8747-2492-4866-9e16-a06248a13292.png">
      <br><br>
      Concluindo a seguinte função:
@@ -101,7 +101,8 @@ Nesse projeto, os states estão localizados no App e são passados como props pa
     A função executada nesse componente é a selecionaTarefa, ela possui o setSelecionado do state selecionado e o setTarefas do state tarefas, basicamente ela é executada no onClick de cada componente item,  essa função seta o selecionado do STATE SELECIONADO para true, então, é feito um map com o setTarefas percorrendo todas as tarefas, caso o id da tarefa seja igual ao id da tarefa selecionada, o selecionado do STATE TAREFA é setado para true, dessa maneira só pode ter um componente com selecionado = true.<br>
     <img src="https://user-images.githubusercontent.com/86172649/165829884-5204975c-6c5c-4105-8e77-0bd5a8fb45d6.png"><br><br>
     A logica do componente em si é simples, ele retorna a estrutura do item com os dados recebidos e possui ifs ternarios aplicando as seguintes logicas, no className, caso a propriedade selecionado daquele item (que vem de tarefas) seja true, ele adiciona a classe itemSelecionado, o mesmo processo acontece para a propriedade completado. Alem disso, ele conta com a função onClick já citada anteriormente, que só é executada caso completado seja == false, por fim, ele renderiza uma imagem no item caso completado seja == true, utilizando a seguinte lógica:
-    <img src="https://user-images.githubusercontent.com/86172649/165945640-b67b23d3-8ce8-4c1e-a766-8736c99d6e25.png"><br><br>
+    <img src="https://user-images.githubusercontent.com/86172649/165966577-7cb8d1fa-8bf9-41e7-816c-c332f703bb03.png"><br><br>
+
   </ul>
   
   </ul>
@@ -111,7 +112,7 @@ Nesse projeto, os states estão localizados no App e são passados como props pa
      <img src="https://user-images.githubusercontent.com/86172649/165943089-1e290054-97b1-4b5c-8556-575e4a02e5a7.png"><br><br>
     Esse componente tem como funcão fazer a lógica para fazer o timer das tarefas decrescer, passando essa lógica para o seu componente filho relógio, que renderiza esse dados, o cronômetro recebe como props de app o selecionado do state selecionado e uma função nomeada finalizarTarefa, então sua tipagem ficou da seguinte maneira:
      <img src="https://user-images.githubusercontent.com/86172649/165946858-3873ba4f-7166-41a4-9897-9eea9dc52f32.png"><br><br>    
-    Como o cronômetro manipula o tempo, ele tem uma state tempo, tipado como number, esse state entra em ação apenas quando o onClick do botão do componente executa, pois quando isso acontece é executada uma função nomeada regressiva, que é uma função em loop que seta a propriedade tempo do state para -1 a cada segundo, essa função tem um if que retorna ela mesmo com o contador - 1, dessa maneira ela é uma <b><i>função recursiva</b></i>, onde o tempo decreesce ate 0 mudando no state tempo sempre, depois é executada a função finalizarTarefa, que foi passada por props.<br>
+    Como o cronômetro manipula o tempo, ele tem uma state tempo, tipado como number, esse state entra em ação apenas quando o onClick do botão do componente executa, pois quando isso acontece é executada uma função nomeada regressiva, que é uma função em loop que seta a propriedade tempo do state para -1 a cada segundo, essa função tem um if que retorna ela mesmo com o contador - 1, dessa maneira ela é uma <b><i>função recursiva</b></i>, onde o tempo decresce ate 0 mudando no state tempo sempre, depois é executada a função finalizarTarefa, que foi passada por props.<br>
     <img src="https://user-images.githubusercontent.com/86172649/165953984-a58eb1cf-d1ac-47ff-aa05-7ac2c7994067.png"><br><br>
     A função finalizarTarefa basicamente seta o state selecionado daquela função para undefined e faz um map no setTarefas para trocar o completado daquele item para true.<br>
     <img src="https://user-images.githubusercontent.com/86172649/165959940-ff9688fb-1640-4c47-b1eb-bc355dbfd4c6.png"><br><br>   
@@ -121,7 +122,7 @@ Nesse projeto, os states estão localizados no App e são passados como props pa
     <ul>
       Esse componente tem como função receber a props tempo do componente cronômetro, tratar esses dados e renderizar eles de maneira correta, ele é tipado levando em conta que o tempo pode ser indefinido, isso é um comportamento que o typescript te obriga a fazer para previnir erros.<br>
       <img src="https://user-images.githubusercontent.com/86172649/165961512-6b2913c5-2e45-40e2-91e2-dcebf5a94fa4.png"><br><br>
-      A lógica dele é bem simples, ele recebe o tempo em segundos e converte para minutos (arrendondado em inteiro) para mostrar nos 2 primeiros digitos, além disso, ele pega o resto desse tempo em segundo fazendo um mod % 60 nos segundos, dessa maneira os segundos são tratados e mostrados nos 2 últimos digitos do cronômetro. Por fim, mais um tratamento é aplicado nessas 2 variáveis, convertendo para string e utilizando a função .padStart, que basicamente coloca um 0 antes do primeiro digito caso esse numero só tenha uma casa decimal (1,2,3,4,5...), a estrutura dele é uma styled.div que engloba 5 divs, sendo 4 delas digitos e uma a divisão entre os digitos.<br>
+      A lógica dele é bem simples, ele recebe o tempo em segundos e converte para minutos (arrendondado em inteiro) para mostrar nos 2 primeiros digitos, além disso, ele pega o resto desse tempo em segundos fazendo um mod % 60 nos segundos, dessa maneira os segundos são tratados e mostrados nos 2 últimos digitos do cronômetro. Por fim, mais um tratamento é aplicado nessas 2 variáveis, convertendo para string e utilizando a função .padStart, que basicamente coloca um 0 antes do primeiro digito caso esse numero só tenha uma casa decimal (1,2,3,4,5...), a estrutura dele é uma styled.div que engloba 5 divs, sendo 4 delas digitos e uma a divisão entre os digitos.<br>
       <img src="https://user-images.githubusercontent.com/86172649/165963424-de0d1c81-3f15-496e-8ef0-396621e6ad69.png"><br><br>
     </ul>       
   </ul>   
