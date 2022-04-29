@@ -10,13 +10,13 @@ interface Props{
 
 export default function Lista({ tarefas, selecionaTarefa } : Props ){
     return(
-        <ListaWrapper> {/* SRP - Nesse componente, a lista só tem uma função */}
+        <ListaWrapper>
             <h2> Estudos do dia </h2>
             <ul> 
-                {tarefas.map((item) => ( /* RESPONSABILIDADE LISTA = Fazer a iteração e enviar os dados via map e props */ /* INDEX = Não entendi. */
+                {tarefas.map((item) => ( /* RESPONSABILIDADE LISTA = Fazer a iteração e enviar os dados via map e props */ 
                     <Item
                     selecionaTarefa={selecionaTarefa} 
-                    {...item} 
+                    {...item}  /* == tarefa = {item.tarefa} tempo = {item.tempo} */
                     key={item.id}
                     /> /* RESPONSABILIDADE ITEM = Renderizar os dados enviados por lista  */
                 ))}

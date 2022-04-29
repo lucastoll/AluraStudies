@@ -1,10 +1,9 @@
 import React from "react";
-import { SpanRelogio, RelogioComponente } from "../../../styles/Relogio";
+import { RelogioComponente } from "../../../styles/Relogio";
 
 interface Props {
     tempo: number | undefined
 }
-
 
 export default function Relogio ({ tempo = 0 } : Props){
     const minutos = Math.floor(tempo / 60);

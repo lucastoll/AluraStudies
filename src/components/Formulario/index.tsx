@@ -17,13 +17,13 @@ function Formulario({ setTarefas }: Props) {
       setTarefas(tarefasAntigas => 
         [
           ...tarefasAntigas,
-          {
-            tarefa,
-            tempo,
-            selecionado: false,
-            completado: false,
-            id: uuidv4()
-          }
+        {
+        tarefa,
+        tempo,
+        selecionado: false,
+        completado: false,
+        id: uuidv4()
+        }
         ]
       )
       setTarefa("");

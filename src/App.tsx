@@ -19,14 +19,13 @@ export default function App() {
     }
   ])
 
-  const [selecionado, setSelecionado] = useState<InterfaceTarefa>(); /* state tipado */
-  function selecionaTarefa(tarefaSelecionada: InterfaceTarefa){ /* function tipada */
+  const [selecionado, setSelecionado] = useState<InterfaceTarefa>(); 
+  function selecionaTarefa(tarefaSelecionada: InterfaceTarefa){ 
     setSelecionado(tarefaSelecionada); 
 
     setTarefas(tarefasAnteriores => tarefasAnteriores.map(tarefa => ({
       ...tarefa,
-      selecionado: tarefa.id === tarefaSelecionada.id ? true : false
-      /* Faz um loop nas tarefas, caso o seu id seja igual o tarefaSelecionada a prop selecionado daquela tarefa passa para true */
+      selecionado: tarefa.id === tarefaSelecionada.id ? true : false              /* Faz um loop nas tarefas, caso o seu id seja igual o tarefaSelecionada a prop selecionado daquela tarefa passa para true */
     })))
   }
 

@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const ListaWrapper = styled.aside`
   grid-area: tarefas;
-  height: 100%;
-  margin-bottom: 100px;
+  height: 280px;
+  margin-bottom: 50px;
 
   h2 {
     font-size: 1.25rem;
@@ -11,7 +11,7 @@ export const ListaWrapper = styled.aside`
   }
 
   ul {
-    max-height: 350px;
+    max-height: 280px;
     overflow-y: scroll;
   	scrollbar-width: thin;
   }
